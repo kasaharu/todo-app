@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TodoListPageComponent } from './pages/todo-list/todo-list.component';
+import { HomeComponent } from './pages/home/home.component';
 
-const routes: Routes = [{ path: '', redirectTo: '/todo-list', pathMatch: 'full' }, { path: 'todo-list', component: TodoListPageComponent }];
+const routes: Routes = [{ path: '', redirectTo: '/home', pathMatch: 'full' }, { path: 'home', component: HomeComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
