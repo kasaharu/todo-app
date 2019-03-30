@@ -8,14 +8,14 @@ describe('TodoContentItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoContentItemComponent ]
-    })
-    .compileComponents();
+      declarations: [TodoContentItemComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoContentItemComponent);
     component = fixture.componentInstance;
+    component.todoItem = { id: 1, title: 'title 1', isCompleted: false };
     fixture.detectChanges();
   });
 
