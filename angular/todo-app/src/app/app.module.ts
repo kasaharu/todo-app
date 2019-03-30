@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './containers/todo-list/todo-list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegistrationTodoComponent } from './components/registration-todo/registration-todo.component';
+import { TodoContentListComponent } from './components/todo-content-list/todo-content-list.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent, HomeComponent, RegistrationTodoComponent],
+  declarations: [AppComponent, TodoListComponent, HomeComponent, RegistrationTodoComponent, TodoContentListComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
