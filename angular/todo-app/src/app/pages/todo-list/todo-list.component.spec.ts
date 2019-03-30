@@ -8,9 +8,8 @@ describe('TodoListPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListPageComponent ]
-    })
-    .compileComponents();
+      declarations: [TodoListPageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
