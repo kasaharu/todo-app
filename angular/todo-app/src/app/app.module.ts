@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './containers/todo-list/todo-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import { RegistrationTodoComponent } from './components/registration-todo/registration-todo.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent, HomeComponent],
+  declarations: [AppComponent, TodoListComponent, HomeComponent, RegistrationTodoComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
