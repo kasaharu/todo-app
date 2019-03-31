@@ -15,13 +15,8 @@ export class TodoService {
   constructor() {}
 
   fetchTodoList() {
-    const nextTodoList = [
-      { id: 1, title: 'title 1', isCompleted: false },
-      { id: 2, title: 'title 2', isCompleted: false },
-      { id: 3, title: 'title 3', isCompleted: false },
-    ];
-
-    this._todoList$.next(nextTodoList);
+    const savedTodoList = JSON.parse(localStorage.getItem('kasaharu-todo-app-angular-1'));
+    this._todoList$.next(savedTodoList);
   }
 
   createNewTodo(newTodo) {
