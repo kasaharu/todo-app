@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Todo } from '../core/domains';
+import { TodoRepositoryService } from '../repositories/todo-repository.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,16 +13,16 @@ export class TodoService {
     return this._todoList$;
   }
 
-  constructor() {}
+  constructor(private todoRepository: TodoRepositoryService) {}
 
   fetchTodoList() {
-    const savedTodoList = JSON.parse(localStorage.getItem('kasaharu-todo-app-angular-1'));
+    const savedTodoList = this.todoRepository.findTodoList();
     this._todoList$.next(savedTodoList);
   }
 
   createNewTodo(newTodo) {
     let newTodoList: Todo[];
-    let savedTodoList = JSON.parse(localStorage.getItem('kasaharu-todo-app-angular-1'));
+    let savedTodoList = this.todoRepository.findTodoList();
 
     if (savedTodoList) {
       const listCount = savedTodoList.length;
@@ -30,7 +31,7 @@ export class TodoService {
       newTodoList = [{ ...newTodo, id: 1, isCompleted: false }];
     }
 
-    localStorage.setItem('kasaharu-todo-app-angular-1', JSON.stringify(newTodoList));
+    this.todoRepository.updateTodoList(newTodoList);
     this._todoList$.next(newTodoList);
   }
 }
