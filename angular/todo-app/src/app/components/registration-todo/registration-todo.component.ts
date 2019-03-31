@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-registration-todo',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class RegistrationTodoComponent implements OnInit {
   todoForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private todoService: TodoService) {
     this.todoForm = this.fb.group({
       title: [''],
       description: [''],
@@ -19,6 +20,6 @@ export class RegistrationTodoComponent implements OnInit {
   ngOnInit() {}
 
   register() {
-    console.log(this.todoForm.value);
+    this.todoService.createNewTodo(this.todoForm.value);
   }
 }
