@@ -31,5 +31,6 @@ export class TodoService {
     }
 
     localStorage.setItem('kasaharu-todo-app-angular-1', JSON.stringify(newTodoList));
+    this._todoList$.next(newTodoList);
   }
 }
