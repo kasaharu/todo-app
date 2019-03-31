@@ -10,7 +10,14 @@ import { TodoContentListComponent } from './components/todo-content-list/todo-co
 import { TodoContentItemComponent } from './components/todo-content-item/todo-content-item.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent, HomeComponent, RegistrationTodoComponent, TodoContentListComponent, TodoContentItemComponent],
+  declarations: [
+    AppComponent,
+    TodoListComponent,
+    HomeComponent,
+    RegistrationTodoComponent,
+    TodoContentListComponent,
+    TodoContentItemComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
