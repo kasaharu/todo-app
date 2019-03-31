@@ -6,13 +6,14 @@ import { Todo } from '../core/domains';
   providedIn: 'root',
 })
 export class TodoRepositoryService {
+  localStorageKey = 'kasaharu-todo-app-angular-1';
   constructor() {}
 
   findTodoList() {
-    return JSON.parse(localStorage.getItem('kasaharu-todo-app-angular-1'));
+    return JSON.parse(localStorage.getItem(this.localStorageKey));
   }
 
   updateTodoList(newTodoList: Todo[]) {
-    localStorage.setItem('kasaharu-todo-app-angular-1', JSON.stringify(newTodoList));
+    localStorage.setItem(this.localStorageKey, JSON.stringify(newTodoList));
   }
 }
