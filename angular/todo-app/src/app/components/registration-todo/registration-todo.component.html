@@ -1,3 +1,11 @@
-<p>
-  registration-todo works!
-</p>
+<p>Todo の追加</p>
+
+<form [formGroup]="todoForm">
+  <label for="">タイトル</label>
+  <input formControlName="title" />
+  <label for="">説明</label>
+  <input formControlName="description" />
+  <label for="">期日</label>
+  <input formControlName="deadline" />
+  <button (click)="register()">登録</button>
+</form>
