@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Todo } from '../core/domains';
-import { TodoRepositoryService } from '../repositories/todo-repository.service';
+import { TodoRepository } from '../repositories/todo.repository';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class TodoService {
     return this._todoList$;
   }
 
-  constructor(private todoRepository: TodoRepositoryService) {}
+  constructor(private todoRepository: TodoRepository) {}
 
   fetchTodoList() {
     const savedTodoList = this.todoRepository.findTodoList();

@@ -5,7 +5,7 @@ import { Todo } from '../core/domains';
 @Injectable({
   providedIn: 'root',
 })
-export class TodoRepositoryService {
+export class TodoRepository {
   localStorageKey = 'kasaharu-todo-app-angular-1';
   constructor() {}
 
