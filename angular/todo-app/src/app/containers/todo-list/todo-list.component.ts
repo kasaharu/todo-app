@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Todo } from '../../core/domains';
-import { TodoService } from '../../services/todo.service';
 import { TodoQuery } from '../../queries/todo.query';
 
 @Component({
@@ -11,15 +10,18 @@ import { TodoQuery } from '../../queries/todo.query';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
+  @Output()
+  createNewTodo = new EventEmitter();
+
   todoList$: Observable<Todo[]>;
 
-  constructor(private todoQuery: TodoQuery, private todoService: TodoService) {
+  constructor(private todoQuery: TodoQuery) {
     this.todoList$ = this.todoQuery.todoList$;
   }
 
   ngOnInit() {}
 
   registerNewTodo(newTodo) {
-    this.todoService.createNewTodo(newTodo);
+    this.createNewTodo.emit(newTodo);
   }
 }
