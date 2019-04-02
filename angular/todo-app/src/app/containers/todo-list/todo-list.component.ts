@@ -17,4 +17,8 @@ export class TodoListComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  registerNewTodo(newTodo) {
+    this.todoService.createNewTodo(newTodo);
+  }
 }

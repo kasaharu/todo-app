@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-registration-todo',
@@ -8,8 +7,11 @@ import { TodoService } from '../../services/todo.service';
   styleUrls: ['./registration-todo.component.scss'],
 })
 export class RegistrationTodoComponent implements OnInit {
+  @Output()
+  register = new EventEmitter();
+
   todoForm: FormGroup;
-  constructor(private fb: FormBuilder, private todoService: TodoService) {
+  constructor(private fb: FormBuilder) {
     this.todoForm = this.fb.group({
       title: [''],
       description: [''],
@@ -19,7 +21,7 @@ export class RegistrationTodoComponent implements OnInit {
 
   ngOnInit() {}
 
-  register() {
-    this.todoService.createNewTodo(this.todoForm.value);
+  clickRegistrationButton() {
+    this.register.emit(this.todoForm.value);
   }
 }
