@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 
 import { Todo } from '../../core/domains';
 import { TodoService } from '../../services/todo.service';
+import { TodoQuery } from '../../queries/todo.query';
 
 @Component({
   selector: 'app-todo-list',
@@ -12,8 +13,8 @@ import { TodoService } from '../../services/todo.service';
 export class TodoListComponent implements OnInit {
   todoList$: Observable<Todo[]>;
 
-  constructor(private todoService: TodoService) {
-    this.todoList$ = this.todoService.todoList$;
+  constructor(private todoQuery: TodoQuery, private todoService: TodoService) {
+    this.todoList$ = this.todoQuery.todoList$;
   }
 
   ngOnInit() {}
