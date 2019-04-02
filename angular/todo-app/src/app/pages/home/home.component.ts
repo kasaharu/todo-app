@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TodoForm } from '../../core/models';
 import { TodoService } from '../../services/todo.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
     this.todoService.fetchTodoList();
   }
 
-  createNewTodo(todo) {
+  createNewTodo(todo: TodoForm) {
     this.todoService.createNewTodo(todo);
   }
 }

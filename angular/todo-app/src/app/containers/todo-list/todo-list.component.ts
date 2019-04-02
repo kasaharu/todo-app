@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Todo } from '../../core/domains';
+import { TodoForm } from '../../core/models';
 import { TodoQuery } from '../../queries/todo.query';
 
 @Component({
@@ -11,7 +12,7 @@ import { TodoQuery } from '../../queries/todo.query';
 })
 export class TodoListComponent implements OnInit {
   @Output()
-  createNewTodo = new EventEmitter();
+  createNewTodo = new EventEmitter<TodoForm>();
 
   todoList$: Observable<Todo[]>;
 
@@ -21,7 +22,7 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit() {}
 
-  registerNewTodo(newTodo) {
+  registerNewTodo(newTodo: TodoForm) {
     this.createNewTodo.emit(newTodo);
   }
 }
