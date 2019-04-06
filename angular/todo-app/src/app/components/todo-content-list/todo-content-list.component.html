@@ -1,11 +1,3 @@
-<div class="todo-header">
-  <p class="header-id">ID</p>
-  <p class="header-title">タイトル</p>
-  <p class="header-description">説明</p>
-  <p class="header-deadline">期日</p>
-  <p class="header-is-completed">済</p>
-</div>
-
-<ng-container *ngFor="let todo of todoList">
+<div class="todo-content-list" *ngFor="let todo of todoList">
   <app-todo-content-item [todoItem]="todo"></app-todo-content-item>
-</ng-container>
+</div>
