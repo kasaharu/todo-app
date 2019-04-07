@@ -36,5 +36,21 @@
 
 .modal-content {
   display: flex;
+  flex-direction: column;
   margin: 12px 0;
+  align-items: center;
+}
+
+.content-item {
+  display: flex;
+  width: 400px;
+  margin-bottom: 4px;
+}
+
+.item-label {
+  width: 100px;
+}
+
+.item-input {
+  flex: 1;
 }

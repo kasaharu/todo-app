@@ -3,19 +3,19 @@
   <div class="modal-wrapper">
     <div class="modal-header">Todo の追加</div>
 
-    <div class="modal-content">
-      <form [formGroup]="todoForm">
-        <div>
-          <label for="">タイトル</label>
-          <input formControlName="title" />
+    <div>
+      <form class="modal-content" [formGroup]="todoForm">
+        <div class="content-item">
+          <label class="item-label" for="">タイトル</label>
+          <input class="item-input" formControlName="title" />
         </div>
-        <div>
-          <label for="">説明</label>
-          <input formControlName="description" />
+        <div class="content-item">
+          <label class="item-label" for="">説明</label>
+          <input class="item-input" formControlName="description" />
         </div>
-        <div>
-          <label for="">期日</label>
-          <input formControlName="deadline" />
+        <div class="content-item">
+          <label class="item-label" for="">期日</label>
+          <input class="item-input" formControlName="deadline" />
         </div>
       </form>
     </div>
