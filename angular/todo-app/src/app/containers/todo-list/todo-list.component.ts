@@ -26,6 +26,7 @@ export class TodoListComponent implements OnInit {
 
   registerNewTodo(newTodo: TodoForm) {
     this.createNewTodo.emit(newTodo);
+    this.isVisibleRegistrationModal = false;
   }
 
   openModal() {
