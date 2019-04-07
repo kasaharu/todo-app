@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TodoForm } from '../../core/models';
-import { TodoService } from '../../services/todo.service';
 import { TodoUsecase } from '../../usecases/todo.usecase';
 
 @Component({
@@ -10,13 +9,13 @@ import { TodoUsecase } from '../../usecases/todo.usecase';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private todoService: TodoService, private todoUsecase: TodoUsecase) {}
+  constructor(private todoUsecase: TodoUsecase) {}
 
   ngOnInit() {
     this.todoUsecase.initialize();
   }
 
   createNewTodo(todo: TodoForm) {
-    this.todoService.createNewTodo(todo);
+    this.todoUsecase.create(todo);
   }
 }
