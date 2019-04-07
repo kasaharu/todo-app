@@ -11,6 +11,8 @@ import { TodoForm } from '../../core/models';
 export class RegistrationTodoComponent implements OnInit {
   @Output()
   register = new EventEmitter<TodoForm>();
+  @Output()
+  close = new EventEmitter();
 
   todoForm: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -25,5 +27,9 @@ export class RegistrationTodoComponent implements OnInit {
 
   clickRegistrationButton() {
     this.register.emit(this.todoForm.value);
+  }
+
+  clickWrapper() {
+    this.close.emit();
   }
 }

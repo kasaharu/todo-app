@@ -14,6 +14,8 @@ export class TodoListComponent implements OnInit {
   @Output()
   createNewTodo = new EventEmitter<TodoForm>();
 
+  isVisibleRegistrationModal = false;
+
   todoList$: Observable<Todo[]>;
 
   constructor(private todoQuery: TodoQuery) {
@@ -24,5 +26,13 @@ export class TodoListComponent implements OnInit {
 
   registerNewTodo(newTodo: TodoForm) {
     this.createNewTodo.emit(newTodo);
+  }
+
+  openModal() {
+    this.isVisibleRegistrationModal = true;
+  }
+
+  closeModal() {
+    this.isVisibleRegistrationModal = false;
   }
 }
