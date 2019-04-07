@@ -1,2 +1,4 @@
-<app-registration-todo (register)="registerNewTodo($event)"></app-registration-todo>
-<app-todo-content-list [todoList]="todoList$ | async"></app-todo-content-list>
+<div class="todo-list">
+  <app-registration-todo (register)="registerNewTodo($event)"></app-registration-todo>
+  <app-todo-content-list [todoList]="todoList$ | async"></app-todo-content-list>
+</div>
