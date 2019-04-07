@@ -7,16 +7,16 @@
       <form class="modal-content" [formGroup]="todoForm">
         <div class="content-item">
           <label class="item-label" for="">タイトル</label>
-          <input class="item-input" formControlName="title" />
+          <input class="item-title" formControlName="title" />
         </div>
         <div class="content-item">
           <label class="item-label" for="">説明</label>
-          <input class="item-input" formControlName="description" />
+          <textarea class="item-desc" formControlName="description" rows="5"></textarea>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button (click)="clickRegistrationButton()">登録</button>
+      <button class="modal-primary-button" (click)="clickRegistrationButton()">登録</button>
     </div>
   </div>
 </div>

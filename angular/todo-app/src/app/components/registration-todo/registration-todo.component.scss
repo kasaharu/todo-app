@@ -20,6 +20,7 @@
 }
 
 .modal-wrapper {
+  position: relative;
   background-color: white;
   width: 600px;
   height: 240px;
@@ -43,7 +44,9 @@
 
 .content-item {
   display: flex;
-  width: 400px;
+  width: 500px;
+  height: 28px;
+  line-height: 28px;
   margin-bottom: 4px;
 }
 
@@ -51,6 +54,40 @@
   width: 100px;
 }
 
-.item-input {
+.item-title {
   flex: 1;
+  border: 1px solid #d1d5da;
+  border-radius: 4px;
+  font-size: 20px;
+  outline: none;
+}
+
+.item-desc {
+  flex: 1;
+  border: 1px solid #d1d5da;
+  border-radius: 4px;
+  font-size: 20px;
+  max-height: 100px;
+  outline: none;
+}
+
+.modal-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-top: solid 1px #ccc;
+  text-align: right;
+}
+
+.modal-primary-button {
+  width: 100px;
+  height: 36px;
+  font-size: 16px;
+  background-color: cornflowerblue;
+  color: aliceblue;
+  border: solid 1px #ccc;
+  border-radius: 8px;
+  margin-right: 8px;
 }
